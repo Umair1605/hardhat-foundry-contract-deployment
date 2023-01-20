@@ -12,49 +12,9 @@
     ]
   },
   "files": {
-    "contracts/HelloWorld.sol": {
-      "lastModificationDate": 1674041756166,
-      "contentHash": "516945f2614773bfbeaf04a5bad81350",
-      "sourceName": "contracts/HelloWorld.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "london",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": "^0.8.13",
-      "artifacts": {
-        "HelloWorld": {
-          "0.8.17+commit.8df45f5f.Windows.msvc": "HelloWorld.sol\\HelloWorld.json"
-        }
-      }
-    },
     "contracts/NFT.sol": {
-      "lastModificationDate": 1674041758327,
-      "contentHash": "6e6fd89adbfc38382677b32f0828c3a7",
+      "lastModificationDate": 1674200174888,
+      "contentHash": "f32d70265969ee2b05e33de0f7c468a1",
       "sourceName": "contracts/NFT.sol",
       "solcConfig": {
         "settings": {
@@ -106,8 +66,8 @@
       }
     },
     "contracts/NFTMarket.sol": {
-      "lastModificationDate": 1674197203606,
-      "contentHash": "5ebd3517be42c08e356e7415737e0aa9",
+      "lastModificationDate": 1674198172535,
+      "contentHash": "7086c8a76136a35622b49c09f4f69649",
       "sourceName": "contracts/NFTMarket.sol",
       "solcConfig": {
         "settings": {
@@ -1404,8 +1364,8 @@
       }
     },
     "test/Market.t.sol": {
-      "lastModificationDate": 1674197785261,
-      "contentHash": "7873db3039222bf0b81c9551220227f7",
+      "lastModificationDate": 1674200719321,
+      "contentHash": "9bc9e9347ee0d06d08864a59e0717ef8",
       "sourceName": "test/Market.t.sol",
       "solcConfig": {
         "settings": {
@@ -1436,7 +1396,6 @@
         }
       },
       "imports": [
-        "contracts\\HelloWorld.sol",
         "contracts\\NFT.sol",
         "contracts\\NFTMarket.sol",
         "lib/forge-std/lib/ds-test/src\\test.sol",
@@ -1471,8 +1430,8 @@
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
-        "HelloWorldTest": {
-          "0.8.17+commit.8df45f5f.Windows.msvc": "Market.t.sol\\HelloWorldTest.json"
+        "NftMarketTest": {
+          "0.8.17+commit.8df45f5f.Windows.msvc": "Market.t.sol\\NftMarketTest.json"
         }
       }
     }

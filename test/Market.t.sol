@@ -2,12 +2,10 @@
 pragma solidity ^0.8.13;
 
 import "lib/forge-std/src/Test.sol";
-import 'contracts/HelloWorld.sol';
 import 'contracts/NFT.sol';
 import 'contracts/NFTMarket.sol';
 
-contract HelloWorldTest is Test {
-    HelloWorld hello;
+contract NftMarketTest is Test {
     NFT nft;
     NFTMarket nftmarket;
 
@@ -24,11 +22,10 @@ contract HelloWorldTest is Test {
         uint256 price;
         bool isActive;
     }
-
     
+    // Note: Setup is run before every function
     function setUp() public {
         vm.startPrank(address(0x2e17331cAFAbABAF1abfc2d1Fd37aD48d7dAD929));
-        hello = new HelloWorld("Foundry is fast!");
         nftmarket =  new NFTMarket();
         nft = new NFT(address(nftmarket));   
         vm.stopPrank();     
@@ -215,6 +212,34 @@ contract HelloWorldTest is Test {
     }
 
     //False Test Case
+
+    function test_falseCreateNft() public {
+        vm.startPrank(address(0));
+        vm.expectRevert(bytes("Sender has zero Address"));
+        nft.createToken("abc");
+    }
+
+    function test_FalseCreateMarketItem() public {
+        vm.startPrank(address(0x1));
+        nft.createToken("abc");
+        vm.stopPrank();
+
+        vm.startPrank(address(0x2));
+        vm.expectRevert(bytes("Sender is not the owner of NFT"));
+        // Sender is not the owner of NFT
+        nftmarket.createMarketItem(
+            address(nft),
+            address(0),
+            0,
+            0,
+            1,
+            0,
+            10000000000000000,
+            true
+        );
+
+        vm.stopPrank();
+    }
 
     function test_falseBuyItem() public {
         vm.startPrank(address(0x705AB4299e154C6e85E0Ca2E1127bE5784D6DDdf));

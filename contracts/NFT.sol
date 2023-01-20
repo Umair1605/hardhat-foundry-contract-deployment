@@ -16,6 +16,7 @@ contract NFT is ERC721URIStorage {
 
     // This function is called when the token is to be created
     function createToken(string memory tokenURI) public returns (uint256) {
+        require(msg.sender != address(0) , "Sender has zero Address");
         _tokenIds.increment(); // Increment the tokenIds counter
         uint256 newTokenId = _tokenIds.current(); // The new token id is the current value of the counter
         _mint(msg.sender, newTokenId); // mint the token to the sender
