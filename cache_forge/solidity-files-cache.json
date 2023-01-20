@@ -1364,8 +1364,8 @@
       }
     },
     "test/Market.t.sol": {
-      "lastModificationDate": 1674200719321,
-      "contentHash": "9bc9e9347ee0d06d08864a59e0717ef8",
+      "lastModificationDate": 1674200884745,
+      "contentHash": "b05bf724889d2c280eab8a67c59c2a5e",
       "sourceName": "test/Market.t.sol",
       "solcConfig": {
         "settings": {
